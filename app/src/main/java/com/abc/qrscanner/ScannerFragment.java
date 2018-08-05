@@ -31,6 +31,7 @@ public class ScannerFragment extends Fragment {
     private CodeScanner codeScanner;
 
 
+
     public ScannerFragment() {
         // Required empty public constructor
     }
@@ -58,6 +59,14 @@ public class ScannerFragment extends Fragment {
                     @Override
                     public void run() {
                         Toast.makeText(getActivity(),result.getText(),Toast.LENGTH_SHORT).show();
+                        HomeFragment homeFragment=new HomeFragment();
+                        Bundle bundle=new Bundle();
+                        bundle.putString("result",result.getText());
+                        homeFragment.setArguments(bundle);
+                        FragmentTransaction fragmentTransaction=getFragmentManager().beginTransaction();
+                        fragmentTransaction.replace(R.id.fragment_container,homeFragment,null);
+                        fragmentTransaction.addToBackStack(null).commit();
+
                     }
                 });
             }
@@ -75,10 +84,5 @@ public class ScannerFragment extends Fragment {
         codeScanner.startPreview();
     }
 
-    @Override
-    public void onPause() {
-        codeScanner.releaseResources();
-        super.onPause();
-    }
 
 }
