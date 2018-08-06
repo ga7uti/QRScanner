@@ -3,17 +3,15 @@ package com.abc.qrscanner;
 public class QrDetails {
 
     private String name;
-    private String number;
+    private String qrcode;
     private String email;
-    private String gender;
 
-    public QrDetails(){}
+    public QrDetails() {}
 
-    public QrDetails(String name,  String number, String email, String gender) {
+    public QrDetails(String name, String qrcode, String email) {
         this.name = name;
-        this.number = number;
+        this.qrcode = qrcode;
         this.email = email;
-        this.gender = gender;
     }
 
     public String getName() {
@@ -24,12 +22,12 @@ public class QrDetails {
         this.name = name;
     }
 
-    public String getNumber() {
-        return number;
+    public String getQrcode() {
+        return qrcode;
     }
 
-    public void setNumber(String number) {
-        this.number = number;
+    public void setQrcode(String qrcode) {
+        this.qrcode = qrcode;
     }
 
     public String getEmail() {
@@ -39,12 +37,6 @@ public class QrDetails {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
 }
+
+
